@@ -2,15 +2,23 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bikcraft - Contato</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/grid.css">
+    <title>Bikcraft - Contato - 21 99999-9999</title>
+
+    <meta name="description" content="Compre a sua bicicleta personalizada na Bikcraft. 
+    Possuímos modelos Passeio, Retrô e Esporte.">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Bikcraft - Contato - 21 99999-9999"/>
+    <meta property="og:description" content="Compre a sua bicicleta personalizada na Bikcraft. 
+    Possuímos modelos Passeio, Retrô e Esporte."/>
+    <meta property="og:url" content="http://bikcraft.com/contato.html"/>
+    <meta property="og:image" content="http://bikcraft.com/img/og-image.png"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contato.css">
-    <link rel="stylesheet" href="css/responsivo.css">
     <script>document.documentElement.classList.add("js");</script>
     
 </head>
@@ -40,16 +48,22 @@
     
 
     <section class="contato container fadeInDown" data-anime="1200">
-        <form id="form_orcamento" class="contato_form grid-8">
+        <form id="form_orcamento" method="POST" action="./enviar-sendgrid.php" class="contato_form grid-8 formphp">
             <label for="nome">Nome</label>
-            <input type="text" id="nome">
+            <input type="text" id="nome" name="nome" required>
             <label for="email">E-mail</label>
-            <input for="email" id="email">
+            <input type="email" id="email" name="email" required>
             <label for="telefone">Telefone</label>
-            <input for="text" id="telefone">
+            <input type="text" id="telefone" name="telefone">
+            
+            <label class="nao-aparece">Se você não é robô, deixe em branco.</label>
+            <input type="text" class="nao-aparece" name="leaveblank">
+            <label class="nao-aparece">Se você não é robô, não mude esse campo.</label>
+            <input type="text" class="nao-aparece" name="dontchange" value="http://">
+            
             <label for="mensagem">Especificações</label>
-            <textarea id="espec"></textarea>
-            <button type="submit" class="btn btn-preto">Enviar</button>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            <button id="enviar" name="enviar" type="submit" class="btn btn-preto">Enviar</button>
         </form>
         <div class="contato_dados grid-8">
             <h3>Dados</h3>
@@ -59,9 +73,9 @@
             <span>Rio de Janeiro - RJ - Brasil</span>
             <h3>Redes Sociais</h3>
             <ul>
-                <li><a href="https://www.facebook.com"><img src="img/redes-sociais/facebook.svg"></a></li>
-                <li><a href="https://www.instagram.com"><img src="img/redes-sociais/instagram.svg"></a></li>
-                <li><a href="https://www.twitter.com"><img src="img/redes-sociais/twitter.svg"></a></li>
+                <li><a href="https://www.facebook.com"><img src="img/redes-sociais/facebook.svg" alt="Facebook Bikcraft"></a></li>
+                <li><a href="https://www.instagram.com"><img src="img/redes-sociais/instagram.svg" alt="Instagram Bikcraft"></a></li>
+                <li><a href="https://www.twitter.com"><img src="img/redes-sociais/twitter.svg" alt="Twitter Bikcraft"></a></li>
             </ul>
         </div>
     </section>
@@ -69,12 +83,12 @@
         <a href="http://google.com" target="_blank" class="grid-16"><img src="img/endereco-bikcraft.jpg" alt="Mapa do endereço da Bikcraft"></a>
     </section>
 
-    <section class="quebra">
+    <div class="quebra">
             <blockquote class="quote-externo container">
                 <p>"O verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana."</p>
                 <cite>willian morris</cite>
             </blockquote>
-    </section>
+        </div>
 
     <footer>
         <div class="footer">
@@ -96,9 +110,9 @@
                 <div class="grid-4 footer_redes">
                     <h3>Contato</h3>
                     <ul>
-                        <li><a href="https://www.facebook.com"><img src="img/redes-sociais/facebook.svg"></a></li>
-                        <li><a href="https://www.instagram.com"><img src="img/redes-sociais/instagram.svg"></a></li>
-                        <li><a href="https://www.twitter.com"><img src="img/redes-sociais/twitter.svg"></a></li>
+                        <li><a href="https://www.facebook.com"><img src="img/redes-sociais/facebook.svg" alt="Facebook Bikcraft"></a></li>
+                        <li><a href="https://www.instagram.com"><img src="img/redes-sociais/instagram.svg" alt="Instagram Bikcraft"></a></li>
+                        <li><a href="https://www.twitter.com"><img src="img/redes-sociais/twitter.svg" alt="Twitter Bikcraft"></a></li>
                     </ul>
                 </div>
             </div>
@@ -111,6 +125,7 @@
     </footer>
 
     <script src="./js/simple-anime.js"></script>
+    <script src="./js/simple-form.js"></script>
     <script src="./js/script.js"></script>
 
 </body>
