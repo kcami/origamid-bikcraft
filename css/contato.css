@@ -68,21 +68,18 @@
     margin-top: 10px;
 }
 .contato_dados ul li{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
     display: inline-block;
     margin-right: 10px;
 }
 .contato_dados ul li a{
     border: #fec63e 3px solid;
     display: block;
-    padding: 6px;
+    padding: 10px;
 }
 .contato_dados ul li a:hover{
     border-color: black;
-}
-.contato_dados ul li{
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 14px;
-    padding: 10px 15px;
 }
 .contato_dados p{
     margin: 8px 0;
